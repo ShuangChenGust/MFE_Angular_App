@@ -1,15 +1,16 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const {
+  withModuleFederation,
+} = require("@angular-architects/module-federation/webpack");
 
-module.exports = withModuleFederationPlugin({
-
-  name: 'about',
-
+module.exports = withModuleFederation({
+  name: "about",
+  filename: "remoteEntry.json", // This is essential!
   exposes: {
-    './Component': './projects/about/src/app/app.component.ts',
+    "./AboutModule": "./projects/about/src/app/about.module.ts",
   },
-
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    "@angular/core": { singleton: true, strictVersion: true },
+    "@angular/common": { singleton: true, strictVersion: true },
+    "@angular/router": { singleton: true, strictVersion: true },
   },
-
 });

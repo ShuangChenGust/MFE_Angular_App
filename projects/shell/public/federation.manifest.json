@@ -1,5 +1,6 @@
 {
-  "dashboard": "http://localhost:4201/remoteEntry.json",
-  "todo": "http://localhost:4202/remoteEntry.json",
-  "about": "http://localhost:4203/remoteEntry.json"
+  "todo": "http://localhost:4201/remoteEntry.json",
+  "dashboard": "http://localhost:4202/remoteEntry.json",
+  "about": "http://localhost:4203/remoteEntry.json",
+  "profile": "http://localhost:4204/remoteEntry.json"
 }
