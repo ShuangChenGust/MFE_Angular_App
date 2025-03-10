@@ -4,10 +4,10 @@ const {
 } = require("@angular-architects/module-federation/webpack");
 
 module.exports = withModuleFederationPlugin({
-  name: "todo",
+  name: "profile",
 
   exposes: {
-    "./Component": "./projects/todo/src/app/app.component.ts",
+    "./Component": "./projects/profile/src/app/app.component.ts",
   },
 
   shared: {

@@ -12,5 +12,6 @@ module.exports = withModuleFederation({
     "@angular/core": { singleton: true, strictVersion: true },
     "@angular/common": { singleton: true, strictVersion: true },
     "@angular/router": { singleton: true, strictVersion: true },
+    "shared/src/app/services/todo.service": { singleton: true },
   },
 });

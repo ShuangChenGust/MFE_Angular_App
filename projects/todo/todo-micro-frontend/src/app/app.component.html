@@ -1,1 +1,0 @@
-ng generate component todo-form

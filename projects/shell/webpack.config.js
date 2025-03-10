@@ -19,6 +19,7 @@ module.exports = withModuleFederationPlugin({
     publicPath: "auto", // Ensure this is set correctly
   },
   shared: {
+    "shared/src/app/services/todo.service": { singleton: true },
     ...shareAll({
       singleton: true,
       strictVersion: true,
