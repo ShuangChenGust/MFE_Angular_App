@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  NgZone,
+  Renderer2,
+} from '@angular/core';
 import { TodoService } from '../../../../../shared/src/app/services/todo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,14 +19,22 @@ import { fromEvent } from 'rxjs';
 export class HomeComponent implements OnInit {
   items: string[] = [];
   printer = '';
-
+  isDarkMode = false;
   constructor(
     private todoService: TodoService,
     private cdr: ChangeDetectorRef,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkMode = true;
+      this.renderer.addClass(document.documentElement, 'dark-mode');
+      this.renderer.addClass(document.body, 'dark-mode');
+    }
+
     fromEvent(window, 'event').subscribe((event) => {
       console.log('event listening in home', event);
       const customEvent = event as CustomEvent;

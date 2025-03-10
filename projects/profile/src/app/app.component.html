@@ -1,4 +1,5 @@
 <section class="introduction">
+  <button (click)="toggleTheme()">Toggle Dark Mode</button>
   <h2>About Me</h2>
   <p>
     I am a Full-Stack Software Engineer with six years of experience across
@@ -45,3 +46,11 @@
 </section>
 
 <router-outlet />
+
+<style>
+  html.dark-mode body,
+  html.dark-mode app-root {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+  }
+</style>
