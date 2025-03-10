@@ -1,5 +1,9 @@
-<!-- <p>home works!</p> -->
 <h2>Current todo Item list</h2>
-<ul>
+<div>
+  <p>Received Items: {{ items }}</p>
+</div>
+
+<ul *ngIf="items.length > 0">
   <li *ngFor="let item of items">{{ item }}</li>
 </ul>
+{{ printer }}
